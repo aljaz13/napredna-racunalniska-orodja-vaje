@@ -1,0 +1,145 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      4948,        137]
+NotebookOptionsPosition[      4467,        120]
+NotebookOutlinePosition[      4866,        136]
+CellTagsIndexPosition[      4823,        133]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"f", "[", "t_", "]"}], " ", ":=", " ", 
+  RowBox[{
+   RowBox[{"Sin", "[", "t", "]"}], " ", 
+   RowBox[{"t", "^", "2"}], " ", 
+   RowBox[{"Exp", "[", 
+    RowBox[{"-", "t"}], "]"}]}]}], "\n", 
+ RowBox[{
+  RowBox[{"t0", " ", "=", " ", "2"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"taylor", "[", 
+    RowBox[{"t_", ",", " ", "n_"}], "]"}], " ", ":=", " ", 
+   RowBox[{
+    RowBox[{"Normal", "[", 
+     RowBox[{"Series", "[", 
+      RowBox[{
+       RowBox[{"f", "[", "s", "]"}], ",", " ", 
+       RowBox[{"{", 
+        RowBox[{"s", ",", " ", "t0", ",", " ", "n"}], "}"}]}], "]"}], "]"}], "/.", 
+    RowBox[{"s", "->", "t"}]}]}], "\n"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"graf", "[", "n_", "]"}], " ", ":=", " ", "\n", "  ", 
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"f", "[", "t", "]"}], ",", " ", 
+       RowBox[{"taylor", "[", 
+        RowBox[{"t", ",", " ", "n"}], "]"}]}], "}"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"t", ",", " ", "0", ",", " ", "4"}], "}"}], ",", " ", "\n", 
+     "   ", 
+     RowBox[{"PlotLegends", " ", "->", " ", 
+      RowBox[{"{", 
+       RowBox[{"\"\<f(t)\>\"", ",", " ", 
+        RowBox[{"StringJoin", "[", 
+         RowBox[{"\"\<Pribli\[ZHacek]ek (\>\"", ",", " ", 
+          RowBox[{"ToString", "[", "n", "]"}], ",", " ", "\"\<. red)\>\""}], 
+         "]"}]}], "}"}]}], ",", "  ", "\n", "   ", 
+     RowBox[{"AxesLabel", " ", "->", " ", 
+      RowBox[{"{", 
+       RowBox[{"\"\<t\>\"", ",", " ", "\"\<f(t)\>\""}], "}"}]}], ",", "\n", 
+     "   ", 
+     RowBox[{"PlotStyle", " ", "->", " ", 
+      RowBox[{"{", 
+       RowBox[{"Green", ",", " ", "Red"}], "}"}]}]}], "]"}]}], " ", 
+  "\n"}], "\n", 
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"graf", "[", "n", "]"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"n", ",", " ", "1", ",", " ", "\"\<Red pribli\[ZHacek]ka\>\""}],
+       "}"}], ",", " ", "1", ",", " ", "10", ",", " ", "1"}], "}"}]}], 
+  "]"}]}], "Input",
+ CellLabel->"In[11]:=",ExpressionUUID->"e890294b-c98a-491b-b6a0-d6eeae343ad7"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`n$$ = 10, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`n$$], 1, "Red pribli\[ZHacek]ka"}, 1, 10, 1}}, 
+    Typeset`size$$ = {504.19999999999993`, {109., 115.}}, Typeset`update$$ = 
+    0, Typeset`initDone$$, Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`n$$ = 1}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, 
+      "Body" :> $CellContext`graf[$CellContext`n$$], 
+      "Specifications" :> {{{$CellContext`n$$, 1, "Red pribli\[ZHacek]ka"}, 1,
+          10, 1}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{553., {153.13403309800196`, 158.86596690199804`}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.908884790245969*^9, 3.9088848075537987`*^9}, 
+   3.9088848475485315`*^9, 3.908884891980794*^9},
+ CellLabel->"Out[15]=",ExpressionUUID->"8e1a4f63-1424-401e-8f1b-59104531b40e"]
+}, Open  ]]
+},
+WindowSize->{1428, 735.75},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"13.3 for Microsoft Windows (64-bit) (June 3, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"878d6ed8-471f-4042-8aab-78d630c58b13"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 2112, 59, 219, "Input",ExpressionUUID->"e890294b-c98a-491b-b6a0-d6eeae343ad7"],
+Cell[2695, 83, 1756, 34, 331, "Output",ExpressionUUID->"8e1a4f63-1424-401e-8f1b-59104531b40e"]
+}, Open  ]]
+}
+]
+*)
+
